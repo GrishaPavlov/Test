@@ -7,16 +7,10 @@ public class PlayerController : MonoBehaviour
 {
 
     public Camera cam;
-
-    public GameObject Arrow;
-
     public NavMeshAgent agent;
+    public LineRenderer linerenderer;
 
-    public LineRenderer lr;
-
-    Queue<Vector3> Destinations;
-
-
+    Queue<Vector3> Destinations;    
     Vector3 CurrentDestination;
 
     private void Start()
@@ -50,10 +44,10 @@ public class PlayerController : MonoBehaviour
 
     void DrawLine()
     {
-        lr.positionCount = Destinations.Count + 2;
+        linerenderer.positionCount = Destinations.Count + 2;
         List<Vector3> positions = Destinations.ToList();
         positions.Insert(0, transform.position);
         positions.Insert(1, CurrentDestination);
-        lr.SetPositions(positions.ToArray());
+        linerenderer.SetPositions(positions.ToArray());
     }
 }
