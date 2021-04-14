@@ -11,7 +11,6 @@ public class Plate : MonoBehaviour
 
     public void OnTriggerEnter(Collider hit)
     {
-        Debug.Log(hit.gameObject.tag);
         MeshRenderer mr = hit.gameObject.GetComponent<MeshRenderer>();
         if (hit.gameObject.tag.Equals("Player") && mr.material.color == BallColor.color)
         {
@@ -19,9 +18,5 @@ public class Plate : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter(Collision hit)
-    {
-        
-    }
 
 }
